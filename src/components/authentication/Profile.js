@@ -27,11 +27,14 @@ export default function Profile() {
           <h2 className="text-center mb-4">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}
-          <div className="d-grid gap-2 col-6 mx-auto">
+          <div className="d-grid gap-3 col-6 mx-auto">
           <Link to="/update-profile" className="btn btn-dark btn-block">
             Update Profile
           </Link>
-              <Button type="button" className="btn btn-secondary btn-block"  onClick={handleLogout}>
+          <Link to="/" className="btn btn-dark btn-block">
+            Back to my files
+          </Link>
+          <Button type="button" className="btn btn-secondary btn-block"  onClick={handleLogout}>
               Log Out
               </Button>
           </div>

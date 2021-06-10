@@ -4,7 +4,7 @@ import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Profile from "./authentication/Profile"
 import Login from "./authentication/Login"
-//import Description from "./authentication/Description"
+import Aboutus from "./authentication/Aboutus"
 import PrivateRoute from "./authentication/PrivateRoute"
 import ForgotPassword from "./authentication/ForgotPassword"
 import UpdateProfile from "./authentication/UpdateProfile"
@@ -26,6 +26,7 @@ function App() {
           {/* Auth */}
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
+          <Route path="/aboutus" component={Aboutus} />
           <Route path="/forgot-password" component={ForgotPassword} />
         </Switch>
       </AuthProvider>

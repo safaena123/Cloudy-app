@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import { Form, Button, Card, Alert, Navbar, Nav } from "react-bootstrap"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import CenteredContainer from "./CenteredContainer"
@@ -34,6 +34,18 @@ export default function Signup() {
   }
 
   return (
+    <div>
+    <Navbar bg="light" expand="lg">
+<Navbar.Brand href="#home">Cloudy</Navbar.Brand>
+<Navbar.Toggle aria-controls="basic-navbar-nav" />
+<Navbar.Collapse id="basic-navbar-nav">
+  <Nav className="mr-auto">
+    <Nav.Link href="/aboutus">Home</Nav.Link>
+    <Nav.Link href="/login">Sign in</Nav.Link>
+    <Nav.Link href="/signup">Sign up</Nav.Link>
+  </Nav>
+</Navbar.Collapse>
+</Navbar>
     <CenteredContainer>
       <Card>
         <Card.Body>
@@ -60,8 +72,12 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="forgot-password w-100 text-center mt-2">
-      <p style={{color: "white"}}>Already have an account? <Link to="/login">Log In</Link></p>
+      <p style={{color: "white"}}>Already have an account? <Link to="/login">Sign In</Link></p>
+      </div>
+      <div className="forgot-password w-100 text-center mt-2">
+      <Link to="/aboutus" class="btn btn-light">About us</Link>
       </div>
     </CenteredContainer>
+    </div>
   )
 }

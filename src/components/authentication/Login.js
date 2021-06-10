@@ -48,7 +48,7 @@ export default function Login() {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg">
   <Navbar.Brand href="#home">Cloudy</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -85,9 +85,6 @@ export default function Login() {
       </Card>
       <div className="forgot-password w-100 text-center mt-2">
       <p style={{color: "white"}}>Need an account? <Link to="/signup">Sign Up</Link></p>
-      </div>
-      <div className="forgot-password w-100 text-center mt-2">
-      <Link to="/aboutus" class="btn btn-light">About us</Link>
       </div>
     </CenteredContainer>
     </div>

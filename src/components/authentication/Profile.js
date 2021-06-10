@@ -27,7 +27,7 @@ export default function Profile() {
           <h2 className="text-center mb-4">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <div className="d-grid gap-2 col-6 mx-auto">
           <Link to="/update-profile" className="btn btn-dark btn-block">
             Update Profile
           </Link>

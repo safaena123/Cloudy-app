@@ -43,7 +43,7 @@ export default function ForgotPassword() {
             <Button disabled={loading} className="btn btn-dark btn-block" type="submit">
               Reset Password
             </Button>
-            <Link to="/login" className="btn btn-secondary btn-block">Login</Link>
+            <Link to="/login" className="btn btn-secondary btn-block">Sign in</Link>
             </div>
           </Form>
         </Card.Body>

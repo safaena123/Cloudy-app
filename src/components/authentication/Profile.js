@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Card, Button, Alert } from "react-bootstrap"
+import { Button, Card, Alert, Navbar, Nav } from "react-bootstrap"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import CenteredContainer from "./CenteredContainer"
@@ -21,6 +21,17 @@ export default function Profile() {
   }
 
   return (
+    <div>
+          <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar.Brand href="#home">Cloudy</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/">My Files</Nav.Link>
+          <Nav.Link href="/user">My Profile</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+      </Navbar>
     <CenteredContainer>
       <Card>
         <Card.Body>
@@ -31,9 +42,6 @@ export default function Profile() {
           <Link to="/update-profile" className="btn btn-dark btn-block">
             Update Profile
           </Link>
-          <Link to="/" className="btn btn-dark btn-block">
-            Back to my files
-          </Link>
           <Button type="button" className="btn btn-secondary btn-block"  onClick={handleLogout}>
               Log Out
               </Button>
@@ -41,5 +49,6 @@ export default function Profile() {
         </Card.Body>
       </Card>
     </CenteredContainer>
+    </div>
   )
 }

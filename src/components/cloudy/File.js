@@ -40,7 +40,7 @@ export default function File({ file }) {
             <Button variant="dark" type="submit" >
               Download
             </Button>
-            <Button variant="dark" type="submit" >
+            <Button variant="danger" type="submit" >
               Delete
             </Button>
           </Modal.Footer>

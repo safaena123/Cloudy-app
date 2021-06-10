@@ -1,11 +1,11 @@
 import React from "react"
-import { Container } from "react-bootstrap"
+import { Container, Navbar, Nav  } from "react-bootstrap"
 import { useFolder } from "../../hooks/useFolder"
 import AddFolderButton from "./AddFolderButton"
 import AddFileButton from "./AddFileButton"
 import Folder from "./Folder"
 import File from "./File"
-import Navbar from "./Navbar"
+//import Navbar from "./Navbar"
 import FolderBreadcrumbs from "./FolderBreadcrumbs"
 import { useParams, useLocation } from "react-router-dom"
 
@@ -16,7 +16,16 @@ export default function Dashboard() {
 
   return (
     <>
-      <Navbar />
+      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar.Brand href="#home">Cloudy</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/">My Files</Nav.Link>
+          <Nav.Link href="/user">My Profile</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+      </Navbar>
       <Container fluid>
         <div className="d-flex align-items-center">
           <FolderBreadcrumbs currentFolder={folder} />

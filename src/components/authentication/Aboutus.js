@@ -1,7 +1,8 @@
 import React from 'react'
 import CenteredContainer from "./CenteredContainer"
-import { Card, Navbar, Nav } from "react-bootstrap"
+import { Card, Navbar, Nav, Container, Row, Col, Image } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import logo from '../../media/Blacklogo.png';
 
 export default function Aboutus() {
     return (
@@ -18,6 +19,13 @@ export default function Aboutus() {
     </Navbar.Collapse>
     </Navbar>
         <CenteredContainer>
+        <Container className="d-flex align-items-center justify-content-center">
+        <Row>
+          <Col xs={3} md={2}>
+            <Image style={{width: "300px"}} src={logo} roundedCircle />
+          </Col>
+        </Row>
+        </Container>
            <Card>
               <Card.Body>
                <h2 className="text-center mb-4">About us</h2>

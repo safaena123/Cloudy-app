@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert, Navbar, Nav } from "react-bootstrap"
+import { Form, Button, Card, Alert, Navbar, Nav, Container, Image, Row, Col } from "react-bootstrap"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import CenteredContainer from "./CenteredContainer"
 import { signInWithGoogle } from "../../firebase";
+import logo from '../../media/Blacklogo.png';
 
 
 
@@ -60,6 +61,13 @@ export default function Login() {
       </Navbar.Collapse>
       </Navbar>
   <CenteredContainer>
+    <Container className="d-flex align-items-center justify-content-center">
+        <Row>
+          <Col xs={3} md={2}>
+            <Image style={{width: "200px"}} src={logo} roundedCircle />
+          </Col>
+        </Row>
+        </Container>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign In</h2>

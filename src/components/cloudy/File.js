@@ -1,9 +1,9 @@
 import { faFile } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Button, Modal, Form } from "react-bootstrap"
 //import { useAuth } from "../../contexts/AuthContext"
-//import { storage, database } from "../../firebase"
+import { storage, database } from "../../firebase"
 
 
 export default function File({ file }) {
@@ -16,6 +16,25 @@ export default function File({ file }) {
   function closeModal() {
     setOpen(false)
   }
+
+  const [didMount, setDidMount] = useState(false); 
+
+  useEffect(() => {
+    setDidMount(true);
+    return () => setDidMount(false);
+  }, [])
+
+  if(!didMount) {
+    return null;
+  }
+
+  function deleteFile(){
+    const fileRef = storage.refFromURL(file.url);
+    fileRef.delete().then(() => {
+        console.log("Deleted")
+    }).catch(err => console.log(err))
+  }
+
 
   return (
     <>
@@ -37,11 +56,11 @@ export default function File({ file }) {
             <Button variant="dark" target="blank" href={file.url}>
               Open
             </Button>
-            <Button variant="dark" type="submit" >
-              Download
+            <Button variant="dark" >
+              Download 
             </Button>
-            <Button variant="danger" type="submit" >
-              Delete
+            <Button variant="secondary" onClick={deleteFile}>
+              Delete 
             </Button>
           </Modal.Footer>
         </Form>
